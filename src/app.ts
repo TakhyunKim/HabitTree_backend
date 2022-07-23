@@ -1,6 +1,10 @@
 import express, { Request, Response, NextFunction } from "express";
 
+import router from "./routes";
+
 const app = express();
+
+app.use("/", router);
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   res.send("server start");
